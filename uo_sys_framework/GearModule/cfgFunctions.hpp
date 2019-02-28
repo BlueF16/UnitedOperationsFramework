@@ -1,6 +1,10 @@
-class UO_FW_ACE_GearFunctionsAttributes {
-    file = "\x\UO_FW\addons\Main\GearModule\cfgFunctions\ACE_Arsenal";
-    class GearTypeLoadfromAttribute {};
+class UO_FW_3DEN_GearFunctions {
+    file = "\x\UO_FW\addons\Main\GearModule\cfgFunctions\3DEN";
+    class GearTypeLoad3DEN {};
+    class setAllEntityGear {};
+    class GearHandleEH {};
+    class GearLoadPreset {};
+    class ACEGearClassAttributeLoad {};
 };
 class UO_FW_OlsenGearFunctions {
     file = "\x\UO_FW\addons\Main\GearModule\cfgFunctions\Olsen";

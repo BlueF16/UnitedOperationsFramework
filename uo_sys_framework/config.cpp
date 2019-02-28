@@ -55,6 +55,11 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
+    class All {
+        class EventHandlers {
+            #include "GearModule\cfg3denEH\EH.hpp"
+        };
+    };
     class Logic;
     class Module_F: Logic {
         class EventHandlers;
@@ -119,18 +124,7 @@ class CfgUnitInsignia {
 class Cfg3DEN {
 
     class EventHandlers {
-        class UO_FW_3DEN_EH {
-            onMissionLoad = "\
-                if (getMissionConfigValue ['UO_FW_Enabled',false]) then {\
-                    [] call UO_FW_fnc_BasicSettings3Den;\
-                };\
-            ";
-            OnMissionPreviewEnd = "\
-                if (getMissionConfigValue ['UO_FW_Enabled',false]) then {\
-                    [] call UO_FW_fnc_BasicSettings3Den;\
-                };\
-            ";
-        };
+        #include "Core\cfg3denEH.hpp"
     };
 
     class Mission {
@@ -290,10 +284,11 @@ class display3DEN {
 };
 
 class CfgRemoteExec {
-
 };
 
 #include "Core\CfgUO\RespawnTemplates.hpp"
+
+#include "GearModule\CfgUO\GearPresets.hpp"
 
 class Params {
     #define DAYTIMEHOUR_DEFAULT 12
@@ -327,6 +322,11 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_Eventhandlers {
     #include "Core\cfgXEH\PostInit.hpp"
     //Module PostInit Activation
+};
+
+class Extended_Init_Eventhandlers {
+    class CAManBase {
+    };
 };
 
 class Extended_InitPost_Eventhandlers {
