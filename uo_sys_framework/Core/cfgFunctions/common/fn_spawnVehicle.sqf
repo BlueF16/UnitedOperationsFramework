@@ -21,9 +21,7 @@ params ["_class","_pos",["_side",""]];
 
 private _vehicle = _class createVehicle [0,0,0];
 _vehicle setpos _pos;
-if (!isNil "UO_FW_ShotCount_EH_Event") then {
-    ["UO_FW_ShotCount_EH_Event", _vehicle] call CBA_fnc_serverEvent;
-};
+["UO_FW_Core_VehicleSpawnedEvent", _vehicle] call CBA_fnc_serverEvent;
 if (((_vehicle getVariable ["UO_FW_AssetName", ""]) isEqualto "") && {!(_side isEqualto "")}) then {
   {
     if ((_x select 1) isEqualto _side) exitWith {

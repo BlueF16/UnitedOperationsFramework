@@ -75,7 +75,8 @@ _unit setUnitPos _unitStance;
 if (_vehicleAssigned && {!isNull _currentVeh}) then {
     [_unit,_vr,_currentVeh] call UO_FW_AI_fnc_setAssignedVehicle;
 };
-["UO_FW_ShotCount_EH_Event", _unit] call CBA_fnc_serverEvent;
+["UO_FW_Core_UnitSpawnedEvent", _unit] call CBA_fnc_serverEvent;
+//["UO_FW_ShotCount_EH_Event", _unit] call CBA_fnc_serverEvent;
 ["UO_FW_Track_Event", _unit] call CBA_fnc_serverEvent;
 
 if (UO_FW_MACR_MAP_ALL) then {

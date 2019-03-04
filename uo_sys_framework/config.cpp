@@ -307,6 +307,7 @@ class Extended_PreInit_EventHandlers {
 	#include "BriefingModule\cfgXEH\PreInit.hpp"
 	#include "AntiNDModule\cfgXEH\PreInit.hpp"
 	#include "TeamColourModule\cfgXEH\PreInit.hpp"
+    #include "HostageModule\cfgXEH\PreInit.hpp"
 	#include "SelfActionsModule\cfgXEH\PreInit.hpp"
 	#include "MarkerControlModule\cfgXEH\PreInit.hpp"
 	#include "ShotCountModule\cfgXEH\PreInit.hpp"

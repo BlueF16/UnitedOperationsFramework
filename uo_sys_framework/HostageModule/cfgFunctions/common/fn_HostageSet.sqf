@@ -15,7 +15,7 @@ if (getMarkerColor _marker isEqualto "") exitwith {
 
 _marker setMarkerAlpha 0;
 
-["UO_FW_Hostage_ACEActions_GlobalEvent", [_unit], "HostageJiPID"] call CBA_fnc_globalEventJiP;
+["UO_FW_Hostage_ACEActions_GlobalEvent", [_unit]] call CBA_fnc_globalEventJiP;
 
 _unit setBehaviour "CARELESS";
 _unit allowFleeing 0;
@@ -34,18 +34,25 @@ private _EhAnimDone = _unit addEventHandler ["AnimDone", {
 [{
     params ["_argNested", "_idPFH"];
     _argNested params ["_unit","_marker","_lastCheckedTime"];
+    if(!alive _unit) exitWith
+    {
+         (SETPVAR(_unit,Hostage_IsRescued,false));
+        [_idPFH] call CBA_fnc_removePerFrameHandler;
+    };
     private _timeDifference = (CBA_missionTime - _lastCheckedTime);
     if (_timeDifference < 5) exitwith {};
     _argNested set [2,(CBA_missionTime)];
-    if (!(animationState _unit isEqualto "acts_aidlpsitmstpssurwnondnon04") && {(_unit inArea _marker)}) exitwith {
-        if ((vehicle _unit) isEqualto _unit) then {
+    if (!(animationState _unit isEqualto "acts_aidlpsitmstpssurwnondnon04") && {(_unit inArea _marker)}) exitwith 
+    {
+        if ((vehicle _unit) isEqualto _unit) then 
+        {
             [_unit] joinSilent grpNull;
             _unit disableAI "MOVE";
             [{
                 _this playMoveNow "AmovPsitMstpSnonWnonDnon_ground";
             }, _unit, 1] call CBA_fnc_waitAndExecute;
         };
-        (SETPVAR(_this,Hostage_IsRescued,true));
+        (SETPVAR(_unit,Hostage_IsRescued,true));
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
 }, 5, [_unit,_marker,CBA_missionTime]] call CBA_fnc_addPerFrameHandler;
