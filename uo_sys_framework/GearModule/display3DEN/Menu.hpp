@@ -1,35 +1,42 @@
-class UO_FW_Gear_Settings {
+class EGVAR(Gear,Settings) {
     text = "Configure Gear Settings";
-    action = "edit3DENMissionAttributes 'UO_FW_Gear_Settings';";
+    action = QUOTE(edit3DENMissionAttributes QN(EGVAR(Gear,Settings)););
 };
 
-class UO_FW_Gear_LoadOnAll {
+class EGVAR(Gear,LoadOnAll) {
     text = "Load Gear On All Entities";
-    action = "[] call UO_FW_fnc_setAllEntityGear;";
+    action = QUOTE([] call EFUNC(Gear,setAllEntityGear););
 };
 
-class UO_FW_Blufor_Gear_Configure {
+class EGVAR(Gear,Configure_Blufor) {
     text = "Configure Blufor Gear";
-    action = "edit3DENMissionAttributes 'UO_FW_GearSettings_Blufor';";
+    action = QUOTE(edit3DENMissionAttributes QN(EGVAR(Gear,Menu_Blufor)));
 };
 
-class UO_FW_Opfor_Gear_Configure {
+class EGVAR(Gear,Configure_Opfor) {
     text = "Configure Opfor Gear";
-    action = "edit3DENMissionAttributes 'UO_FW_GearSettings_Opfor';";
+    action = QUOTE(edit3DENMissionAttributes QN(EGVAR(Gear,Menu_Opfor)));
 };
 
-class UO_FW_Indfor_Gear_Configure {
+class EGVAR(Gear,Configure_Indfor) {
     text = "Configure Indfor Gear";
-    action = "edit3DENMissionAttributes 'UO_FW_GearSettings_Indfor';";
+    action = QUOTE(edit3DENMissionAttributes QN(EGVAR(Gear,Menu_Indfor)));
 };
 
-class UO_FW_CIV_Gear_Configure {
+class EGVAR(Gear,Configure_Civilian) {
     text = "Configure Civilian Gear";
-    action = "edit3DENMissionAttributes 'UO_FW_GearSettings_CIV';";
+    action = QUOTE(edit3DENMissionAttributes QN(EGVAR(Gear,Menu_Civilian)));
 };
 
-class UO_FW_Gear_Folder {
+class EGVAR(Gear,Folder) {
     text = "Configure Gear";
-    items[] = {"UO_FW_Gear_Settings","UO_FW_Gear_LoadOnAll","UO_FW_Blufor_Gear_Configure","UO_FW_Opfor_Gear_Configure","UO_FW_Indfor_Gear_Configure","UO_FW_CIV_Gear_Configure"};
+    items[] = {
+        QEGVAR(Gear,Settings),
+        QEGVAR(Gear,LoadOnAll),
+        QEGVAR(Gear,Configure_Blufor),
+        QEGVAR(Gear,Configure_Opfor),
+        QEGVAR(Gear,Configure_Indfor),
+        QEGVAR(Gear,Configure_Civilian)
+    };
     picture = "\a3\3DEN\Data\Displays\Display3DEN\EntityMenu\arsenal_ca.paa";
 };

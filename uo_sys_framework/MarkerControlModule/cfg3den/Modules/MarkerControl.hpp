@@ -1,9 +1,9 @@
-class UO_FW_MarkerControl {
+class EGVAR(MarkerControl,Category) {
     displayName = "Marker Control Settings";
     collapsed = 1;
     class Attributes {
-        class UO_FW_MarkerControl_Enabled {
-            property = "UO_FW_MarkerControl_Enabled";
+        class EGVAR(MarkerControl,Enabled) {
+            property = QEGVAR(MarkerControl,Enabled);
             displayName = "Marker Control";
             tooltip = "Enables Marker Control";
             control = "CheckboxState";
@@ -11,92 +11,92 @@ class UO_FW_MarkerControl {
             defaultValue = "true";
             typeName = "BOOL";
         };
-        class UO_FW_MarkerControl_BluforMarkers {
+        class EGVAR(MarkerControl,BluforMarkers) {
             displayName = "Blufor Markers";
             tooltip = "Markers which are only visible by Blufor. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_BluforMarkers";
+            property = QEGVAR(MarkerControl,BluforMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_BluforBriefingMarkers {
+        class EGVAR(MarkerControl,BluforBriefingMarkers) {
             displayName = "Blufor briefing Markers";
             tooltip = "Markers which are only visible by Blufor during the briefing. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_BluforBriefingMarkers";
+            property = QEGVAR(MarkerControl,BluforBriefingMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_OpforMarkers {
+        class EGVAR(MarkerControl,OpforMarkers) {
             displayName = "Opfor Markers";
             tooltip = "Markers which are only visible by Opfor. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_OpforMarkers";
+            property = QEGVAR(MarkerControl,OpforMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_OpforBriefingMarkers {
+        class EGVAR(MarkerControl,OpforBriefingMarkers) {
             displayName = "Opfor briefing Markers";
             tooltip = "Markers which are only visible by Opfor during the briefing. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_OpforBriefingMarkers";
+            property = QEGVAR(MarkerControl,OpforBriefingMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_INDFORMarkers {
+        class EGVAR(MarkerControl,IndforMarkers) {
             displayName = "Independent Markers";
             tooltip = "Markers which are only visible by Independent. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_INDFORMarkers";
+            property = QEGVAR(MarkerControl,IndforMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_INDFORBriefingMarkers {
+        class EGVAR(MarkerControl,IndforBriefingMarkers) {
             displayName = "Independent briefing Markers";
             tooltip = "Markers which are only visible by Independent during the briefing. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_INDFORBriefingMarkers";
+            property = QEGVAR(MarkerControl,IndforBriefingMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_CIVMarkers {
+        class EGVAR(MarkerControl,CivilianMarkers) {
             displayName = "Civilian Markers";
             tooltip = "Markers which are only visible by Civilian. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_CIVMarkers";
+            property = QEGVAR(MarkerControl,CivilianMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_CIVBriefingMarkers {
+        class EGVAR(MarkerControl,CivilianBriefingMarkers) {
             displayName = "Civilian briefing Markers";
             tooltip = "Markers which are only visible by Civilian during the briefing. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_CIVBriefingMarkers";
+            property = QEGVAR(MarkerControl,CivilianBriefingMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";
         };
-        class UO_FW_MarkerControl_SystemMarkers {
+        class EGVAR(MarkerControl,SystemMarkers) {
             displayName = "System Markers";
             tooltip = "Markers which are not visible. Marker names or 3DEN layer names without quotes and seperated by ,";
             control = "EditArray";
             typeName = "STRING";
-            property = "UO_FW_MarkerControl_SystemMarkers";
+            property = QEGVAR(MarkerControl,SystemMarkers);
             expression = UO_FW_SCENARIO_EXPRESSION;
             validate = "none";
             defaultValue = "[]";

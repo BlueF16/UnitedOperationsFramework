@@ -2,11 +2,11 @@ class UO_FW_TeamColourOptions {
     displayName = "Team Colour Options";
     collapsed = 1;
     class Attributes {
-        class UO_FW_TeamColour {
+        class EGVAR(TeamColour,Colour) {
             displayName = "Team Colour";
             tooltip = "Set Player Colour";
-            property = "UO_FW_TeamColour";
-            control = "UO_FW_TeamColourAttribute";
+            property = QEGVAR(TeamColour,Colour);
+            control = QEGVAR(TeamColour,ColourAttribute);
             typeName = "STRING";
             expression = UO_FW_ENTITY_EXPRESSION;
             condition = "objectControllable";

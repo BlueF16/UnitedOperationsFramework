@@ -1,12 +1,12 @@
 #define COMPONENT Core
 #include "\x\UO_FW\addons\Main\script_macros.hpp"
-UO_FW_EXEC_CHECK(CLIENT);
+EXEC_CHECK(CLIENT);
 
 params ["_scenario"];
 
 player enableSimulation false;
 removeAllWeapons player;
-"UO_FW_EndScreen_Layer" cutRsc ["UO_FW_DIA_ENDSCREEN", "PLAIN"];
+QGVAR(EndScreenLayer) cutRsc ["UO_FW_DIA_ENDSCREEN", "PLAIN"];
 private _bg = 3000;
 private _endTitle = 3001;
 private _left = 3002;
@@ -39,17 +39,17 @@ private _textSide = 0;
             _rightText = _rightText + _temp;
         };
     };
-} forEach UO_FW_Teams;
+} forEach MGVAR(Teams);
 private _endTitleText = _scenario;
-if !(UO_FW_TimeLimit isEqualto 0) then {
+if !((EGETMVAR(EndConditions,Timelimit,60)) isEqualto 0) then {
     private _time = ceil(CBA_missiontime / 60);
-    if (_time >= UO_FW_TimeLimit) then {
-        _time = UO_FW_TimeLimit;
+    if (_time >= (EGETMVAR(EndConditions,Timelimit,60))) then {
+        _time = (EGETMVAR(EndConditions,Timelimit,60));
     };
-    private _timeLimitText = format ["Mission duration: %1 out of %2 minutes", _time, UO_FW_TimeLimit];
+    private _timeLimitText = format ["Mission duration: %1 out of %2 minutes", _time, (EGETMVAR(EndConditions,Timelimit,60))];
     _endTitleText = format ["%1<br />%2", _scenario, _timeLimitText];
 };
-private _dia = uiNamespace getVariable "UO_FW_EndScreen";
+private _dia = uiNamespace getVariable QMGVAR(EndScreen);
 (_dia displayCtrl _endTitle) ctrlSetStructuredText parseText _endTitleText;
 (_dia displayCtrl _left) ctrlSetStructuredText parseText _leftText;
 (_dia displayCtrl _right) ctrlSetStructuredText parseText _rightText;
